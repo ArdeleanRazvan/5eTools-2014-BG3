@@ -122,9 +122,9 @@
 .container {
   padding-left: 0;
   padding-right: 0;
-   .roller.render-roller{
-color:#fbcea0;
-    }
+  .roller.render-roller {
+    color: #fbcea0;
+  }
   .col-md-3 {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -235,7 +235,7 @@ color:#fbcea0;
     float: left;
     font-family: "Alegreya", serif;
     background: #00000059;
-   
+
     .cls-tbl {
       background: transparent;
       tbody {
@@ -385,22 +385,31 @@ color:#fbcea0;
       font-size: 1.6rem;
       font-weight: 500;
     }
-    p>i>a{
-      color:#fbcea0;
+    p > i > a {
+      color: #fbcea0;
     }
-    p>a,p>.roller.render-roller{
-      color:#fbcea0;
+    p > a,
+    p > .roller.render-roller {
+      color: #fbcea0;
     }
 
     hr {
       border-color: #fbcea0;
     }
 
-    .cls-main__cls-fluff {
+    .cls-main__cls-fluff,
+    .cls-main__linked-titles,
+    .cls-main__sc-feature,
+    .cls-main__sc-fluff {
       > td {
         padding-top: 1rem !important;
       }
-
+      div {
+        ul {
+          font-weight: 500;
+          font-size: 1.6rem;
+        }
+      }
       .rd__table {
         > caption {
           margin-left: 0;
@@ -415,9 +424,16 @@ color:#fbcea0;
         }
 
         tbody > tr > td {
-            font-size: 1.4rem;
-            font-weight: 500;
-          }
+          font-size: 1.4rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .cls-main__linked-titles,.cls-main__sc-feature,.cls-main__sc-fluff {
+      td {
+        padding-left: 0.8rem !important;
+        padding-right: 0.8rem !important;
       }
     }
   }
