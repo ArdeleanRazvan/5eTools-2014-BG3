@@ -1,4 +1,4 @@
-import {RenderableCollectionFilterSnapshotBase} from "./filter-snapshot-ui-collection-base.js";
+import { RenderableCollectionFilterSnapshotBase } from "./filter-snapshot-ui-collection-base.js";
 
 export class RenderableCollectionSnapshots extends RenderableCollectionFilterSnapshotBase {
 	constructor (
@@ -72,7 +72,7 @@ export class RenderableCollectionSnapshots extends RenderableCollectionFilterSna
 
 		const btnDelete = this._utils.getBtnDelete({entity});
 
-		const btnApply = ee`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Apply as Filters"><span class="glyphicon glyphicon-ok"></span></button>`
+		const btnApply = ee`<button class="ve-btn ve-btn-xs " title="Apply as Filters"><span class="glyphicon glyphicon-ok"></span></button>`
 			.onn("click", async () => {
 				this._comp.doSetFiltersFromBoxSnapshot_(entity.entity);
 				JqueryUtil.doToast("Applied Snapshot as Filters!");

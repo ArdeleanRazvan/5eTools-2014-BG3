@@ -1,43 +1,43 @@
 import {
-	PANEL_TYP_EMPTY,
-	PANEL_TYP_STATS,
-	PANEL_TYP_ROLLBOX,
-	PANEL_TYP_TEXTBOX,
-	PANEL_TYP_RULES,
-	PANEL_TYP_UNIT_CONVERTER,
-	PANEL_TYP_CREATURE_SCALED_CR,
-	PANEL_TYP_CREATURE_SCALED_SPELL_SUMMON,
-	PANEL_TYP_CREATURE_SCALED_CLASS_SUMMON,
-	PANEL_TYP_TIME_TRACKER,
-	PANEL_TYP_MONEY_CONVERTER,
-	PANEL_TYP_TUBE,
-	PANEL_TYP_TWITCH,
-	PANEL_TYP_TWITCH_CHAT,
-	PANEL_TYP_ADVENTURES,
-	PANEL_TYP_BOOKS,
-	PANEL_TYP_COUNTER,
-	PANEL_TYP_IMAGE,
-	PANEL_TYP_ADVENTURE_DYNAMIC_MAP,
-	PANEL_TYP_GENERIC_EMBED,
-	PANEL_TYP_ERROR,
-	PANEL_TYP_BLANK,
+    PANEL_TYP_EMPTY,
+    PANEL_TYP_STATS,
+    PANEL_TYP_ROLLBOX,
+    PANEL_TYP_TEXTBOX,
+    PANEL_TYP_RULES,
+    PANEL_TYP_UNIT_CONVERTER,
+    PANEL_TYP_CREATURE_SCALED_CR,
+    PANEL_TYP_CREATURE_SCALED_SPELL_SUMMON,
+    PANEL_TYP_CREATURE_SCALED_CLASS_SUMMON,
+    PANEL_TYP_TIME_TRACKER,
+    PANEL_TYP_MONEY_CONVERTER,
+    PANEL_TYP_TUBE,
+    PANEL_TYP_TWITCH,
+    PANEL_TYP_TWITCH_CHAT,
+    PANEL_TYP_ADVENTURES,
+    PANEL_TYP_BOOKS,
+    PANEL_TYP_COUNTER,
+    PANEL_TYP_IMAGE,
+    PANEL_TYP_ADVENTURE_DYNAMIC_MAP,
+    PANEL_TYP_GENERIC_EMBED,
+    PANEL_TYP_ERROR,
+    PANEL_TYP_BLANK,
 } from "./dmscreen/dmscreen-consts.js";
-import {DmMapper} from "./dmscreen/dmscreen-mapper.js";
-import {MoneyConverter} from "./dmscreen/dmscreen-moneyconverter.js";
+import { DmMapper } from "./dmscreen/dmscreen-mapper.js";
+import { MoneyConverter } from "./dmscreen/dmscreen-moneyconverter.js";
 import {
-	TimerTrackerMoonSpriteLoader,
-	TimeTracker,
+    TimerTrackerMoonSpriteLoader,
+    TimeTracker,
 } from "./dmscreen/dmscreen-timetracker.js";
-import {Counter} from "./dmscreen/dmscreen-counter.js";
+import { Counter } from "./dmscreen/dmscreen-counter.js";
 import {
-	PanelContentManager_InitiativeTracker,
-	PanelContentManager_InitiativeTrackerCreatureViewer,
-	PanelContentManager_InitiativeTrackerPlayerViewV0,
-	PanelContentManager_InitiativeTrackerPlayerViewV1,
-	PanelContentManagerFactory,
+    PanelContentManager_InitiativeTracker,
+    PanelContentManager_InitiativeTrackerCreatureViewer,
+    PanelContentManager_InitiativeTrackerPlayerViewV0,
+    PanelContentManager_InitiativeTrackerPlayerViewV1,
+    PanelContentManagerFactory,
 } from "./dmscreen/dmscreen-panels.js";
 
-import {OmnisearchBacking} from "./omnisearch/omnisearch-backing.js";
+import { OmnisearchBacking } from "./omnisearch/omnisearch-backing.js";
 
 const UP = "UP";
 const RIGHT = "RIGHT";
@@ -564,7 +564,7 @@ class Board {
 			DataUtil.userDownload(`dm-screen`, toLoad, {fileType: "dm-screen"});
 		};
 
-		const $btnDownload = $(`<button class="ve-btn ve-btn-sm ve-btn-primary mr-2">Download Save</button>`)
+		const $btnDownload = $(`<button class="ve-btn ve-btn-sm  mr-2">Download Save</button>`)
 			.on("click", () => handleClickDownload());
 
 		const handleClickPurge = async () => {
@@ -773,7 +773,7 @@ class SideMenu {
 		const $iptHeight = $(`<input class="form-control" type="number" value="${this.board.height}">`).appendTo($wrpResizeH);
 		this.$iptHeight = $iptHeight;
 		const $wrpSetDim = $(`<div class="w-100 split-v-center"></div>`).appendTo(this.$mnu);
-		const $btnSetDim = $(`<button class="ve-btn ve-btn-primary" style="width: 100%;">Set Dimensions</div>`).appendTo($wrpSetDim);
+		const $btnSetDim = $(`<button class="ve-btn " style="width: 100%;">Set Dimensions</div>`).appendTo($wrpSetDim);
 		$btnSetDim.on("click", async () => {
 			const w = Number($iptWidth.val());
 			const h = Number($iptHeight.val());
@@ -787,7 +787,7 @@ class SideMenu {
 		renderDivider();
 
 		const $wrpFullscreen = $(`<div class="w-100 ve-flex-vh-center-around"></div>`).appendTo(this.$mnu);
-		const $btnFullscreen = $(`<button class="ve-btn ve-btn-primary">Toggle Fullscreen</button>`).appendTo($wrpFullscreen);
+		const $btnFullscreen = $(`<button class="ve-btn ">Toggle Fullscreen</button>`).appendTo($wrpFullscreen);
 		this.board.$btnFullscreen = $btnFullscreen;
 		$btnFullscreen.on("click", () => this.board.doToggleFullscreen());
 		const $btnLockPanels = $(`<button class="ve-btn ve-btn-danger" title="Lock Panels"><span class="glyphicon glyphicon-lock"></span></button>`).appendTo($wrpFullscreen);
@@ -808,11 +808,11 @@ class SideMenu {
 
 		const $wrpSaveLoad = $(`<div class="w-100"></div>`).appendTo(this.$mnu);
 		const $wrpSaveLoadFile = $(`<div class="w-100 mb-2 ve-flex-vh-center-around"></div>`).appendTo($wrpSaveLoad);
-		const $btnSaveFile = $(`<button class="ve-btn ve-btn-primary">Save to File</button>`).appendTo($wrpSaveLoadFile);
+		const $btnSaveFile = $(`<button class="ve-btn ">Save to File</button>`).appendTo($wrpSaveLoadFile);
 		$btnSaveFile.on("click", () => {
 			DataUtil.userDownload(`dm-screen`, this.board.getSaveableState(), {fileType: "dm-screen"});
 		});
-		const $btnLoadFile = $(`<button class="ve-btn ve-btn-primary">Load from File</button>`).appendTo($wrpSaveLoadFile);
+		const $btnLoadFile = $(`<button class="ve-btn ">Load from File</button>`).appendTo($wrpSaveLoadFile);
 		$btnLoadFile.on("click", async () => {
 			const {jsons, errors} = await InputUiUtil.pGetUserUploadJson({expectedFileTypes: ["dm-screen"]});
 
@@ -823,7 +823,7 @@ class SideMenu {
 			await this.board.pDoLoadStateFrom(jsons[0]);
 		});
 		const $wrpSaveLoadUrl = $(`<div class="w-100 ve-flex-vh-center-around"></div>`).appendTo($wrpSaveLoad);
-		const $btnSaveLink = $(`<button class="ve-btn ve-btn-primary">Save to URL</button>`).appendTo($wrpSaveLoadUrl);
+		const $btnSaveLink = $(`<button class="ve-btn ">Save to URL</button>`).appendTo($wrpSaveLoadUrl);
 		$btnSaveLink.on("click", async () => {
 			const encoded = `${window.location.href.split("#")[0]}#${encodeURIComponent(JSON.stringify(this.board.getSaveableState()))}`;
 			await MiscUtil.pCopyTextToClipboard(encoded);
@@ -3086,7 +3086,7 @@ class AddMenuVideoTab extends AddMenuTab {
 					if (e.key === "Enter") $btnAddYT.click();
 				})
 				.appendTo($wrpYT);
-			const $btnAddYT = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`).appendTo($wrpYT);
+			const $btnAddYT = $(`<button class="ve-btn  ve-btn-sm">Embed</button>`).appendTo($wrpYT);
 			$btnAddYT.on("click", () => {
 				let url = $iptUrlYT.val().trim();
 				const m = /https?:\/\/(www\.)?youtube\.com\/watch\?v=(.*?)(&.*$|$)/.exec(url);
@@ -3109,8 +3109,8 @@ class AddMenuVideoTab extends AddMenuTab {
 					if (e.key === "Enter") $btnAddTwitch.click();
 				})
 				.appendTo($wrpTwitch);
-			const $btnAddTwitch = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`).appendTo($wrpTwitch);
-			const $btnAddTwitchChat = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed Chat</button>`).appendTo($wrpTwitch);
+			const $btnAddTwitch = $(`<button class="ve-btn  ve-btn-sm">Embed</button>`).appendTo($wrpTwitch);
+			const $btnAddTwitchChat = $(`<button class="ve-btn  ve-btn-sm">Embed Chat</button>`).appendTo($wrpTwitch);
 			const getTwitchM = (url) => {
 				return /https?:\/\/(www\.)?twitch\.tv\/(.*?)(\?.*$|$)/.exec(url);
 			};
@@ -3152,7 +3152,7 @@ class AddMenuVideoTab extends AddMenuTab {
 					if (e.key === "Enter") $iptUrlGeneric.click();
 				})
 				.appendTo($wrpGeneric);
-			const $btnAddGeneric = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`).appendTo($wrpGeneric);
+			const $btnAddGeneric = $(`<button class="ve-btn  ve-btn-sm">Embed</button>`).appendTo($wrpGeneric);
 			$btnAddGeneric.on("click", () => {
 				let url = $iptUrlGeneric.val().trim();
 				if (url) {
@@ -3228,7 +3228,7 @@ class AddMenuImageTab extends AddMenuTab {
 				const ix = this.menu.pnl.doPopulate_Loading("Uploading"); // will be null if not in tabbed mode
 				this.menu.doClose();
 			}).appendTo($tab);
-			const $btnAdd = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Upload</button>`).appendTo($wrpImgur);
+			const $btnAdd = $(`<button class="ve-btn  ve-btn-sm">Upload</button>`).appendTo($wrpImgur);
 			$btnAdd.on("click", () => {
 				$iptFile.click();
 			});
@@ -3241,7 +3241,7 @@ class AddMenuImageTab extends AddMenuTab {
 					if (e.key === "Enter") $btnAddUrl.click();
 				})
 				.appendTo($wrpUtl);
-			const $btnAddUrl = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpUtl);
+			const $btnAddUrl = $(`<button class="ve-btn  ve-btn-sm">Add</button>`).appendTo($wrpUtl);
 			$btnAddUrl.on("click", () => {
 				let url = $iptUrl.val().trim();
 				if (url) {
@@ -3259,7 +3259,7 @@ class AddMenuImageTab extends AddMenuTab {
 			$(`<hr class="hr-2">`).appendTo($tab);
 
 			// region Adventure dynamic viewer
-			const $btnSelectAdventure = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnSelectAdventure = $(`<button class="ve-btn  ve-btn-sm">Add</button>`)
 				.click(() => DmMapper.pHandleMenuButtonClick(this.menu));
 
 			$$`<div class="ui-modal__row">
@@ -3284,14 +3284,14 @@ class AddMenuSpecialTab extends AddMenuTab {
 			const $tab = $(`<div class="ui-search__wrp-output underline-tabs ve-overflow-y-auto pr-1" id="${this.tabId}"></div>`);
 
 			const $wrpRoller = $(`<div class="ui-modal__row"><span>Dice Roller <i class="ve-muted">(pins the existing dice roller to a panel)</i></span></div>`).appendTo($tab);
-			const $btnRoller = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Pin</button>`).appendTo($wrpRoller);
+			const $btnRoller = $(`<button class="ve-btn  ve-btn-sm">Pin</button>`).appendTo($wrpRoller);
 			$btnRoller.on("click", () => {
 				Renderer.dice.bindDmScreenPanel(this.menu.pnl);
 				this.menu.doClose();
 			});
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $btnTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnTracker = $(`<button class="ve-btn  ve-btn-sm">Add</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTracker({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3303,7 +3303,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			${$btnTracker}
 			</div>`.appendTo($tab);
 
-			const $btnTrackerCreatureViewer = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnTrackerCreatureViewer = $(`<button class="ve-btn  ve-btn-sm">Add</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerCreatureViewer({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3315,7 +3315,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			${$btnTrackerCreatureViewer}
 			</div>`.appendTo($tab);
 
-			const $btnPlayerTrackerV1 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnPlayerTrackerV1 = $(`<button class="ve-btn  ve-btn-sm">Add</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV1({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3327,7 +3327,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			${$btnPlayerTrackerV1}
 			</div>`.appendTo($tab);
 
-			const $btnPlayerTrackerV0 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnPlayerTrackerV0 = $(`<button class="ve-btn  ve-btn-sm">Add</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV0({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3341,7 +3341,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $btnSublist = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnSublist = $(`<button class="ve-btn  ve-btn-sm">Add</button>`)
 				.click(async evt => {
 					await this.menu.pnl.pDoMassPopulate_Entities(evt);
 					this.menu.doClose();
@@ -3360,7 +3360,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			const $wrpText = $$`<div class="ui-modal__row"><span>Basic Text Box <i class="ve-muted">(for a feature-rich editor, ${$btnSwitchToEmbedTag} a Google Doc or similar)</i></span></div>`.appendTo($tab);
-			const $btnText = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpText);
+			const $btnText = $(`<button class="ve-btn  ve-btn-sm">Add</button>`).appendTo($wrpText);
 			$btnText.on("click", () => {
 				this.menu.pnl.doPopulate_TextBox();
 				this.menu.doClose();
@@ -3368,21 +3368,21 @@ class AddMenuSpecialTab extends AddMenuTab {
 			$(`<hr class="hr-2">`).appendTo($tab);
 
 			const $wrpUnitConverter = $(`<div class="ui-modal__row"><span>Unit Converter</span></div>`).appendTo($tab);
-			const $btnUnitConverter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpUnitConverter);
+			const $btnUnitConverter = $(`<button class="ve-btn  ve-btn-sm">Add</button>`).appendTo($wrpUnitConverter);
 			$btnUnitConverter.on("click", () => {
 				this.menu.pnl.doPopulate_UnitConverter();
 				this.menu.doClose();
 			});
 
 			const $wrpMoneyConverter = $(`<div class="ui-modal__row"><span>Coin Converter</span></div>`).appendTo($tab);
-			const $btnMoneyConverter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpMoneyConverter);
+			const $btnMoneyConverter = $(`<button class="ve-btn  ve-btn-sm">Add</button>`).appendTo($wrpMoneyConverter);
 			$btnMoneyConverter.on("click", () => {
 				this.menu.pnl.doPopulate_MoneyConverter();
 				this.menu.doClose();
 			});
 
 			const $wrpCounter = $(`<div class="ui-modal__row"><span>Counter</span></div>`).appendTo($tab);
-			const $btnCounter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpCounter);
+			const $btnCounter = $(`<button class="ve-btn  ve-btn-sm">Add</button>`).appendTo($wrpCounter);
 			$btnCounter.on("click", () => {
 				this.menu.pnl.doPopulate_Counter();
 				this.menu.doClose();
@@ -3391,7 +3391,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			$(`<hr class="hr-2">`).appendTo($tab);
 
 			const $wrpTimeTracker = $(`<div class="ui-modal__row"><span>In-Game Clock/Calendar</span></div>`).appendTo($tab);
-			const $btnTimeTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpTimeTracker);
+			const $btnTimeTracker = $(`<button class="ve-btn  ve-btn-sm">Add</button>`).appendTo($wrpTimeTracker);
 			$btnTimeTracker.on("click", () => {
 				this.menu.pnl.doPopulate_TimeTracker();
 				this.menu.doClose();
@@ -3400,7 +3400,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			$(`<hr class="hr-2">`).appendTo($tab);
 
 			const $wrpBlank = $(`<div class="ui-modal__row"><span class="help" title="For those who don't like plus signs.">Blank Space</span></div>`).appendTo($tab);
-			$(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			$(`<button class="ve-btn  ve-btn-sm">Add</button>`)
 				.on("click", () => {
 					this.menu.pnl.doPopulate_Blank();
 					this.menu.doClose();
@@ -3911,7 +3911,7 @@ class UnitConverter {
 		const $lblLeft = $(`<span class="bold"></span>`).appendTo($wrpLeft);
 		const $iptLeft = $(`<textarea class="dm-unitconv__ipt form-control">${state.i || ""}</textarea>`).appendTo($wrpLeft);
 
-		const $btnSwitch = $(`<button class="ve-btn ve-btn-primary dm-unitconv__btn-switch">⇆</button>`).click(() => {
+		const $btnSwitch = $(`<button class="ve-btn  dm-unitconv__btn-switch">⇆</button>`).click(() => {
 			dirConv = Number(!dirConv);
 			updateDisplay();
 		}).appendTo($wrpIpt);

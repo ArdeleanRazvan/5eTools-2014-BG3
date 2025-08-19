@@ -1,5 +1,5 @@
 import {
-	InitiativeTrackerRowDataViewDefaultParty,
+    InitiativeTrackerRowDataViewDefaultParty,
 } from "./dmscreen-initiativetracker-rowsdefaultparty.js";
 
 export class InitiativeTrackerDefaultParty extends BaseComponent {
@@ -68,7 +68,7 @@ export class InitiativeTrackerDefaultParty extends BaseComponent {
 	/* -------------------------------------------- */
 
 	_render_renderFooter ({rdState, $modalFooter}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn  ve-btn-sm w-100">Save</button>`)
 			.click(() => rdState.cbDoClose(true));
 
 		$$($modalFooter)`<div class="w-100 py-3 no-shrink">

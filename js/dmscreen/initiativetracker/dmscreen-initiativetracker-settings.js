@@ -1,10 +1,10 @@
-import {InitiativeTrackerUi} from "./dmscreen-initiativetracker-ui.js";
+import { InitiativeTrackerUi } from "./dmscreen-initiativetracker-ui.js";
 import {
-	GROUP_DISPLAY_NAMES,
-	InitiativeTrackerStatColumnFactory,
-	IS_PLAYER_VISIBLE_ALL,
-	IS_PLAYER_VISIBLE_NONE,
-	IS_PLAYER_VISIBLE_PLAYER_UNITS_ONLY,
+    GROUP_DISPLAY_NAMES,
+    InitiativeTrackerStatColumnFactory,
+    IS_PLAYER_VISIBLE_ALL,
+    IS_PLAYER_VISIBLE_NONE,
+    IS_PLAYER_VISIBLE_PLAYER_UNITS_ONLY,
 } from "./dmscreen-initiativetracker-statcolumns.js";
 
 class _RenderableCollectionStatsCols extends RenderableCollectionGenericRows {
@@ -31,9 +31,9 @@ class _RenderableCollectionStatsCols extends RenderableCollectionGenericRows {
 
 		const $btnVisible = InitiativeTrackerUi.$getBtnPlayerVisible(
 			comp._state.isPlayerVisible,
-			() => comp._state.isPlayerVisible = $btnVisible.hasClass("ve-btn-primary--half")
+			() => comp._state.isPlayerVisible = $btnVisible.hasClass("--half")
 				? IS_PLAYER_VISIBLE_PLAYER_UNITS_ONLY
-				: $btnVisible.hasClass("ve-btn-primary")
+				: $btnVisible.hasClass("")
 					? IS_PLAYER_VISIBLE_ALL
 					: IS_PLAYER_VISIBLE_NONE,
 			true,
@@ -209,7 +209,7 @@ export class InitiativeTrackerSettings extends BaseComponent {
 	/* -------------------------------------------- */
 
 	_pGetShowModalResults_renderFooter ({$modalFooter, doClose}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn  ve-btn-sm w-100">Save</button>`)
 			.click(() => doClose(true));
 
 		$$($modalFooter)`<div class="w-100 py-3 no-shrink">

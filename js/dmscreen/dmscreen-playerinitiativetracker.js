@@ -1,11 +1,11 @@
-import {PANEL_TYP_INITIATIVE_TRACKER} from "./dmscreen-consts.js";
+import { PANEL_TYP_INITIATIVE_TRACKER } from "./dmscreen-consts.js";
 import {
-	InitiativeTrackerPlayerMessageHandlerV0,
-	InitiativeTrackerPlayerMessageHandlerV1,
-	InitiativeTrackerPlayerUiV0,
-	InitiativeTrackerPlayerUiV1,
+    InitiativeTrackerPlayerMessageHandlerV0,
+    InitiativeTrackerPlayerMessageHandlerV1,
+    InitiativeTrackerPlayerUiV0,
+    InitiativeTrackerPlayerUiV1,
 } from "../initiativetracker/initiativetracker-player.js";
-import {DmScreenUtil} from "./dmscreen-util.js";
+import { DmScreenUtil } from "./dmscreen-util.js";
 
 // region v1
 export class InitiativeTrackerPlayerV1 {
@@ -24,7 +24,7 @@ export class InitiativeTrackerPlayerV1 {
 		view.setElements($meta, $head, $rows);
 
 		let ui;
-		const $btnConnectRemote = $(`<button class="ve-btn ve-btn-primary mb-2 min-w-200p" title="Connect to a tracker outside of this browser tab.">Connect to Remote Tracker</button>`)
+		const $btnConnectRemote = $(`<button class="ve-btn  mb-2 min-w-200p" title="Connect to a tracker outside of this browser tab.">Connect to Remote Tracker</button>`)
 			.click(async () => {
 				$btnConnectRemote.detach();
 				$btnConnectLocal.detach();
@@ -35,7 +35,7 @@ export class InitiativeTrackerPlayerV1 {
 				const $iptServerToken = $(`<input class="form-control input-sm code">`)
 					.change(() => $iptServerToken.removeClass("form-control--error"))
 					.disableSpellcheck();
-				const $btnGenConnect = $(`<button class="ve-btn ve-btn-primary ve-btn-xs mr-2">Connect</button>`);
+				const $btnGenConnect = $(`<button class="ve-btn  ve-btn-xs mr-2">Connect</button>`);
 
 				const $btnCancel = $(`<button class="ve-btn ve-btn-default ve-btn-xs">Back</button>`)
 					.click(() => {
@@ -78,7 +78,7 @@ export class InitiativeTrackerPlayerV1 {
 				});
 			});
 
-		const $btnConnectLocal = $(`<button class="ve-btn ve-btn-primary min-w-200p">Connect to Local Tracker</button>`)
+		const $btnConnectLocal = $(`<button class="ve-btn  min-w-200p">Connect to Local Tracker</button>`)
 			.click(async () => {
 				const $elesData = DmScreenUtil.$getPanelDataElements({board, type: PANEL_TYP_INITIATIVE_TRACKER});
 
@@ -104,7 +104,7 @@ export class InitiativeTrackerPlayerV1 {
 					$elesData.forEach(($e, i) => $selTracker.append(`<option value="${i}">${$e.data("getSummary")()}</option>`));
 					$selTracker.val("-1");
 
-					const $btnOk = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">OK</button>`)
+					const $btnOk = $(`<button class="ve-btn  ve-btn-xs">OK</button>`)
 						.click(async () => {
 							// jQuery reads the disabled value as null
 							if ($selTracker.val() == null) return $selTracker.addClass("form-control--error");
@@ -197,13 +197,13 @@ export class InitiativeTrackerPlayerV0 {
 		const view = new InitiativeTrackerPlayerMessageHandlerScreenV0();
 		view.setElements($meta, $head, $rows);
 
-		const $btnConnectRemote = $(`<button class="ve-btn ve-btn-primary mb-2 min-w-200p" title="Connect to a tracker outside of this browser tab.">Connect to Remote Tracker</button>`)
+		const $btnConnectRemote = $(`<button class="ve-btn  mb-2 min-w-200p" title="Connect to a tracker outside of this browser tab.">Connect to Remote Tracker</button>`)
 			.click(() => {
 				$btnConnectRemote.detach();
 				$btnConnectLocal.detach();
 
 				const $iptServerToken = $(`<input class="form-control input-sm code">`).disableSpellcheck();
-				const $btnGenClientToken = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">Generate Client Token</button>`);
+				const $btnGenClientToken = $(`<button class="ve-btn  ve-btn-xs">Generate Client Token</button>`);
 				const $iptClientToken = $(`<input class="form-control input-sm code copyable">`).disableSpellcheck();
 
 				const $btnCancel = $(`<button class="ve-btn ve-btn-default ve-btn-xs">Back</button>`)
@@ -237,7 +237,7 @@ export class InitiativeTrackerPlayerV0 {
 				ui.init();
 			});
 
-		const $btnConnectLocal = $(`<button class="ve-btn ve-btn-primary min-w-200p" title="Connect to a tracker in this browser tab.">Connect to Local Tracker</button>`)
+		const $btnConnectLocal = $(`<button class="ve-btn  min-w-200p" title="Connect to a tracker in this browser tab.">Connect to Local Tracker</button>`)
 			.click(async () => {
 				const $elesData = DmScreenUtil.$getPanelDataElements({board, type: PANEL_TYP_INITIATIVE_TRACKER});
 
@@ -254,7 +254,7 @@ export class InitiativeTrackerPlayerV0 {
 						$elesData.forEach(($e, i) => $selTracker.append(`<option value="${i}">${$e.data("getSummary")()}</option>`));
 						$selTracker.val("-1");
 
-						const $btnOk = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">OK</button>`)
+						const $btnOk = $(`<button class="ve-btn  ve-btn-xs">OK</button>`)
 							.click(async () => {
 								if ($selTracker.val() === "-1") return $selTracker.addClass("error-background");
 

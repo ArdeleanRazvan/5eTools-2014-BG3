@@ -867,8 +867,8 @@
 		.ve-btn-default:hover,
 		.ve-btn-default:focus,
 		.ve-btn-default:active {
-			background-color: vars-night.$rgb-form-control-bg--night;
-			color: vars-night.$rgb-font--night;
+			background-color: transparent;
+			color: #fbcea0;
 			border-color: vars-night.$rgb-border-grey--night;
 		}
 
@@ -917,9 +917,13 @@
 		}
 
 		.ve-btn-default.active {
-			background-color: #888;
-			box-shadow: inset 0 3px 7px #111e;
-			color: #222;
+			background-color: #fbcea0;
+			// box-shadow: inset 0 3px 7px #111e;
+			color: black;
+			
+		}
+		.ve-btn-default.active > .glyphicon {
+		color:black;
 		}
 
 		.ve-btn-primary.active,

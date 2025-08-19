@@ -325,8 +325,8 @@ export class InitiativeTrackerNetworking {
 		});
 
 		const $wrpHelp = UiUtil.$getAddModalRow($modalInner, "div");
-		const $btnAltGenAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">Generate All</button>`).click(() => $btnGenServerTokens.click());
-		const $btnAltCopyAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">Copy Server Tokens</button>`).click(() => $btnCopyServers.click());
+		const $btnAltGenAll = $(`<button class="ve-btn  ve-btn-text-insert">Generate All</button>`).click(() => $btnGenServerTokens.click());
+		const $btnAltCopyAll = $(`<button class="ve-btn  ve-btn-text-insert">Copy Server Tokens</button>`).click(() => $btnCopyServers.click());
 		$$`<div class="ve-flex w-100">
 			<div class="ve-col-12">
 				<p>
@@ -351,9 +351,9 @@ export class InitiativeTrackerNetworking {
 
 		const $wrpTop = UiUtil.$getAddModalRow($modalInner, "div");
 
-		const $btnAddClient = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Add Client">Add Player</button>`).click(() => addClientRow());
+		const $btnAddClient = $(`<button class="ve-btn ve-btn-xs " title="Add Client">Add Player</button>`).click(() => addClientRow());
 
-		const $btnCopyServers = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Copy any available server tokens to the clipboard">Copy Server Tokens</button>`)
+		const $btnCopyServers = $(`<button class="ve-btn ve-btn-xs " title="Copy any available server tokens to the clipboard">Copy Server Tokens</button>`)
 			.click(async () => {
 				const targetRows = this._p2pMetaV0.rows.filter(it => !it.isDeleted && !it.$iptTokenClient.attr("disabled"));
 				if (!targetRows.length) {
@@ -367,14 +367,14 @@ export class InitiativeTrackerNetworking {
 				}
 			});
 
-		const $btnAcceptClients = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Open a prompt into which text containing client tokens can be pasted">Accept Multiple Clients</button>`)
+		const $btnAcceptClients = $(`<button class="ve-btn ve-btn-xs " title="Open a prompt into which text containing client tokens can be pasted">Accept Multiple Clients</button>`)
 			.click(() => {
 				const {$modalInner, doClose} = UiUtil.getShowModal({title: "Accept Multiple Clients"});
 
 				const $iptText = $(`<textarea class="form-control dm-init-pl__textarea block mb-2"></textarea>`)
 					.keydown(() => $iptText.removeClass("error-background"));
 
-				const $btnAccept = $(`<button class="ve-btn ve-btn-xs ve-btn-primary block ve-text-center" title="Add Client">Accept Multiple Clients</button>`)
+				const $btnAccept = $(`<button class="ve-btn ve-btn-xs  block ve-text-center" title="Add Client">Accept Multiple Clients</button>`)
 					.click(async () => {
 						$iptText.removeClass("error-background");
 						const txt = $iptText.val();
@@ -421,7 +421,7 @@ export class InitiativeTrackerNetworking {
 
 		UiUtil.addModalSep($modalInner);
 
-		const $btnGenServerTokens = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">Generate All</button>`)
+		const $btnGenServerTokens = $(`<button class="ve-btn  ve-btn-xs">Generate All</button>`)
 			.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: this._p2pMetaV0.rows}));
 
 		UiUtil.$getAddModalRow($modalInner, "div")
@@ -467,7 +467,7 @@ export class InitiativeTrackerNetworking {
 					JqueryUtil.showCopiedEffect($iptTokenServer);
 				}).disableSpellcheck();
 
-			const $btnGenServerToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Generate Server Token">Generate</button>`)
+			const $btnGenServerToken = $(`<button class="ve-btn ve-btn-xs " title="Generate Server Token">Generate</button>`)
 				.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: [rowMeta]}));
 
 			const $iptTokenClient = $(`<input class="form-control input-sm code" disabled>`)
@@ -476,7 +476,7 @@ export class InitiativeTrackerNetworking {
 					if (evt.key === "Enter") $btnAcceptClientToken.click();
 				}).disableSpellcheck();
 
-			const $btnAcceptClientToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Accept Client Token" disabled>Accept Client</button>`)
+			const $btnAcceptClientToken = $(`<button class="ve-btn ve-btn-xs " title="Accept Client Token" disabled>Accept Client</button>`)
 				.click(async () => {
 					const token = $iptTokenClient.val();
 					if (PeerUtilV0.isValidToken(token)) {

@@ -1,31 +1,31 @@
-import {InitiativeTrackerConst} from "./dmscreen-initiativetracker-consts.js";
-import {InitiativeTrackerNetworking} from "./dmscreen-initiativetracker-networking.js";
-import {InitiativeTrackerSettings} from "./dmscreen-initiativetracker-settings.js";
-import {InitiativeTrackerSettingsImport} from "./dmscreen-initiativetracker-importsettings.js";
-import {InitiativeTrackerMonsterAdd} from "./dmscreen-initiativetracker-monsteradd.js";
-import {InitiativeTrackerRoller} from "./dmscreen-initiativetracker-roller.js";
-import {InitiativeTrackerEncounterConverter} from "./dmscreen-initiativetracker-encounterconverter.js";
+import { InitiativeTrackerConst } from "./dmscreen-initiativetracker-consts.js";
+import { InitiativeTrackerNetworking } from "./dmscreen-initiativetracker-networking.js";
+import { InitiativeTrackerSettings } from "./dmscreen-initiativetracker-settings.js";
+import { InitiativeTrackerSettingsImport } from "./dmscreen-initiativetracker-importsettings.js";
+import { InitiativeTrackerMonsterAdd } from "./dmscreen-initiativetracker-monsteradd.js";
+import { InitiativeTrackerRoller } from "./dmscreen-initiativetracker-roller.js";
+import { InitiativeTrackerEncounterConverter } from "./dmscreen-initiativetracker-encounterconverter.js";
 import {
-	InitiativeTrackerStatColumnFactory,
-	IS_PLAYER_VISIBLE_ALL,
+    InitiativeTrackerStatColumnFactory,
+    IS_PLAYER_VISIBLE_ALL,
 } from "./dmscreen-initiativetracker-statcolumns.js";
 import {
-	InitiativeTrackerRowDataViewActive,
+    InitiativeTrackerRowDataViewActive,
 } from "./dmscreen-initiativetracker-rowsactive.js";
 import {
-	InitiativeTrackerConditionCustomSerializer,
-	InitiativeTrackerRowDataSerializer,
-	InitiativeTrackerStatColumnDataSerializer,
+    InitiativeTrackerConditionCustomSerializer,
+    InitiativeTrackerRowDataSerializer,
+    InitiativeTrackerStatColumnDataSerializer,
 } from "./dmscreen-initiativetracker-serial.js";
-import {InitiativeTrackerSort} from "./dmscreen-initiativetracker-sort.js";
-import {InitiativeTrackerUtil} from "../../initiativetracker/initiativetracker-utils.js";
-import {DmScreenUtil} from "../dmscreen-util.js";
+import { InitiativeTrackerSort } from "./dmscreen-initiativetracker-sort.js";
+import { InitiativeTrackerUtil } from "../../initiativetracker/initiativetracker-utils.js";
+import { DmScreenUtil } from "../dmscreen-util.js";
 import {
-	InitiativeTrackerRowStateBuilderActive,
-	InitiativeTrackerRowStateBuilderDefaultParty,
+    InitiativeTrackerRowStateBuilderActive,
+    InitiativeTrackerRowStateBuilderDefaultParty,
 } from "./dmscreen-initiativetracker-rowstatebuilder.js";
-import {InitiativeTrackerDefaultParty} from "./dmscreen-initiativetracker-defaultparty.js";
-import {ListUtilBestiary} from "../../utils-list-bestiary.js";
+import { InitiativeTrackerDefaultParty } from "./dmscreen-initiativetracker-defaultparty.js";
+import { ListUtilBestiary } from "../../utils-list-bestiary.js";
 
 export class InitiativeTracker extends BaseComponent {
 	constructor ({board, savedState}) {
@@ -151,7 +151,7 @@ export class InitiativeTracker extends BaseComponent {
 	}
 
 	_render_$getWrpFooter ({doUpdateExternalStates}) {
-		const $btnAdd = $(`<button class="ve-btn ve-btn-primary ve-btn-xs dm-init-lockable" title="Add Player"><span class="glyphicon glyphicon-plus"></span></button>`)
+		const $btnAdd = $(`<button class="ve-btn  ve-btn-xs dm-init-lockable" title="Add Player"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.on("click", async () => {
 				if (this._state.isLocked) return;
 				this._state.rows = [
@@ -237,7 +237,7 @@ export class InitiativeTracker extends BaseComponent {
 			),
 		]);
 
-		const $btnNetworking = $(`<button class="ve-btn ve-btn-primary ve-btn-xs mr-2" title="Player View (SHIFT to Open &quot;Standard&quot; View)"><span class="glyphicon glyphicon-user"></span></button>`)
+		const $btnNetworking = $(`<button class="ve-btn  ve-btn-xs mr-2" title="Player View (SHIFT to Open &quot;Standard&quot; View)"><span class="glyphicon glyphicon-user"></span></button>`)
 			.click(evt => {
 				if (evt.shiftKey) return this._networking.handleClick_playerWindowV1({doUpdateExternalStates});
 				return ContextUtil.pOpenMenu(evt, menuPlayerWindow);

@@ -1,5 +1,5 @@
-import {DmScreenUtil} from "./dmscreen-util.js";
-import {PANEL_TYP_INITIATIVE_TRACKER} from "./dmscreen-consts.js";
+import { DmScreenUtil } from "./dmscreen-util.js";
+import { PANEL_TYP_INITIATIVE_TRACKER } from "./dmscreen-consts.js";
 
 export class InitiativeTrackerCreatureViewer extends BaseComponent {
 	static $getPanelElement (board, savedState) {
@@ -73,7 +73,7 @@ export class InitiativeTrackerCreatureViewer extends BaseComponent {
 	}
 
 	_render_$getStgConnect () {
-		const $btnConnect = $(`<button class="ve-btn ve-btn-primary min-w-200p">Connect to Tracker</button>`)
+		const $btnConnect = $(`<button class="ve-btn  min-w-200p">Connect to Tracker</button>`)
 			.on("click", async () => {
 				const $elesData = DmScreenUtil.$getPanelDataElements({board: this._board, type: PANEL_TYP_INITIATIVE_TRACKER});
 
@@ -91,7 +91,7 @@ export class InitiativeTrackerCreatureViewer extends BaseComponent {
 				</select>`)
 					.on("change", () => $selTracker.removeClass("error-background"));
 
-				const $btnSubmit = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">Connect</button>`)
+				const $btnSubmit = $(`<button class="ve-btn  ve-btn-xs">Connect</button>`)
 					.on("click", () => {
 						const ix = Number($selTracker.val());
 						if (!~ix) {

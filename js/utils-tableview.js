@@ -59,11 +59,11 @@ class UtilsTableview {
 				});
 			});
 
-		const $btnCsv = $(`<button class="ve-btn ve-btn-primary">Download CSV</button>`).click(() => {
+		const $btnCsv = $(`<button class="ve-btn ">Download CSV</button>`).click(() => {
 			DataUtil.userDownloadText(`${title}.csv`, this._getAsCsv({colTransforms, rdState}));
 		});
 
-		const $btnCopy = $(`<button class="ve-btn ve-btn-primary">Copy CSV to Clipboard</button>`).click(async () => {
+		const $btnCopy = $(`<button class="ve-btn ">Copy CSV to Clipboard</button>`).click(async () => {
 			await MiscUtil.pCopyTextToClipboard(this._getAsCsv({colTransforms, rdState}));
 			JqueryUtil.showCopiedEffect($btnCopy);
 		});

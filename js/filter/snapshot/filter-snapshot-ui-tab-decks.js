@@ -1,6 +1,6 @@
-import {RenderableCollectionSnapshotDecks} from "./filter-snapshot-ui-collection-decks.js";
-import {FilterSnapshotUiTabUtils} from "./filter-snapshot-ui-tab-utils.js";
-import {FilterSnapshotBaseSelectClickHandler} from "./filter-snapshot-ui-collection-base.js";
+import { RenderableCollectionSnapshotDecks } from "./filter-snapshot-ui-collection-decks.js";
+import { FilterSnapshotUiTabUtils } from "./filter-snapshot-ui-tab-utils.js";
+import { FilterSnapshotBaseSelectClickHandler } from "./filter-snapshot-ui-collection-base.js";
 
 export class FilterSnapshotUiTabSnapshotDecks {
 	constructor (
@@ -60,12 +60,12 @@ export class FilterSnapshotUiTabSnapshotDecks {
 
 		const {menuMass} = this._pRender_stgControls_menuMass();
 
-		const btnMass = ee`<button class="ve-btn ve-btn-primary ve-btn-xs mr-2">Mass...</button>`
+		const btnMass = ee`<button class="ve-btn  ve-btn-xs mr-2">Mass...</button>`
 			.onn("click", async evt => {
 				await ContextUtil.pOpenMenu(evt, menuMass);
 			});
 
-		const btnCreateSnapshotDeck = ee`<button class="ve-btn ve-btn-primary ve-btn-xs mr-2">Create Snapshot Deck</button>`
+		const btnCreateSnapshotDeck = ee`<button class="ve-btn  ve-btn-xs mr-2">Create Snapshot Deck</button>`
 			.onn("click", async () => {
 				await this._compManager.pHandleClick_createSnapshotDeck();
 			});
@@ -103,7 +103,7 @@ export class FilterSnapshotUiTabSnapshotDecks {
 	_pRender_stgNoRows () {
 		const stgNoRows = FilterSnapshotUiTabUtils.getStgNoRows();
 
-		const btnAddSnapshotDeckNoRows = ee`<button class="ve-btn ve-btn-primary">Create Snapshot Deck</button>`
+		const btnAddSnapshotDeckNoRows = ee`<button class="ve-btn ">Create Snapshot Deck</button>`
 			.onn("click", async () => {
 				await this._compManager.pHandleClick_createSnapshotDeck();
 			});

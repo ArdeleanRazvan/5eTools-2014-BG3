@@ -1,11 +1,11 @@
-import {EncounterBuilderRandomizer} from "./encounterbuilder-randomizer.js";
-import {EncounterBuilderCreatureMeta, EncounterBuilderXpInfo, EncounterPartyMeta, EncounterPartyPlayerMeta} from "./encounterbuilder-models.js";
-import {EncounterBuilderUiTtk} from "./encounterbuilder-ui-ttk.js";
-import {EncounterBuilderUiHelp} from "./encounterbuilder-ui-help.js";
-import {EncounterBuilderRenderableCollectionPlayersSimple} from "./encounterbuilder-playerssimple.js";
-import {EncounterBuilderRenderableCollectionColsExtraAdvanced} from "./encounterbuilder-colsextraadvanced.js";
-import {EncounterBuilderRenderableCollectionPlayersAdvanced} from "./encounterbuilder-playersadvanced.js";
-import {EncounterBuilderAdjuster} from "./encounterbuilder-adjuster.js";
+import { EncounterBuilderRandomizer } from "./encounterbuilder-randomizer.js";
+import { EncounterBuilderCreatureMeta, EncounterBuilderXpInfo, EncounterPartyMeta } from "./encounterbuilder-models.js";
+import { EncounterBuilderUiTtk } from "./encounterbuilder-ui-ttk.js";
+import { EncounterBuilderUiHelp } from "./encounterbuilder-ui-help.js";
+import { EncounterBuilderRenderableCollectionPlayersSimple } from "./encounterbuilder-playerssimple.js";
+import { EncounterBuilderRenderableCollectionColsExtraAdvanced } from "./encounterbuilder-colsextraadvanced.js";
+import { EncounterBuilderRenderableCollectionPlayersAdvanced } from "./encounterbuilder-playersadvanced.js";
+import { EncounterBuilderAdjuster } from "./encounterbuilder-adjuster.js";
 
 /**
  * TODO rework this to use doubled multipliers for XP, so we avoid the 0.5x issue for 6+ party sizes. Then scale
@@ -136,13 +136,13 @@ export class EncounterBuilderUi extends BaseComponent {
 				});
 		};
 
-		const $btnRandom = $(`<button class="ve-btn ve-btn-primary ecgen__btn-random-adjust" title="Randomly generate a Medium encounter">Random Medium</button>`)
+		const $btnRandom = $(`<button class="ve-btn  ecgen__btn-random-adjust" title="Randomly generate a Medium encounter">Random Medium</button>`)
 			.click(async evt => {
 				evt.preventDefault();
 				await pSetRandomMode(modeRandom);
 			});
 
-		const $btnRandomMode = $(`<button class="ve-btn ve-btn-primary ve-dropdown-toggle"><span class="caret"></span></button>`);
+		const $btnRandomMode = $(`<button class="ve-btn  ve-dropdown-toggle"><span class="caret"></span></button>`);
 		JqueryUtil.bindDropdownButton($btnRandomMode);
 
 		return {
@@ -183,13 +183,13 @@ export class EncounterBuilderUi extends BaseComponent {
 				});
 		};
 
-		const $btnAdjust = $(`<button class="ve-btn ve-btn-primary ecgen__btn-random-adjust" title="Adjust the current encounter difficulty to Medium">Adjust to Medium</button>`)
+		const $btnAdjust = $(`<button class="ve-btn  ecgen__btn-random-adjust" title="Adjust the current encounter difficulty to Medium">Adjust to Medium</button>`)
 			.click(async evt => {
 				evt.preventDefault();
 				await pSetAdjustMode(modeAdjust);
 			});
 
-		const $btnAdjustMode = $(`<button class="ve-btn ve-btn-primary ve-dropdown-toggle"><span class="caret"></span></button>`);
+		const $btnAdjustMode = $(`<button class="ve-btn  ve-dropdown-toggle"><span class="caret"></span></button>`);
 		JqueryUtil.bindDropdownButton($btnAdjustMode);
 
 		return {
@@ -289,7 +289,7 @@ export class EncounterBuilderUi extends BaseComponent {
 	}
 
 	_renderGroupAndDifficulty_getGroupEles_simple () {
-		const $btnAddPlayers = $(`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Another Level</button>`)
+		const $btnAddPlayers = $(`<button class="ve-btn  ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Another Level</button>`)
 			.click(() => this._comp.doAddPlayer());
 
 		const $wrpRows = $(`<div class="ve-flex-col w-100"></div>`);
@@ -323,10 +323,10 @@ export class EncounterBuilderUi extends BaseComponent {
 	}
 
 	_renderGroupAndDifficulty_getGroupEles_advanced () {
-		const $btnAddPlayers = $(`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Another Player</button>`)
+		const $btnAddPlayers = $(`<button class="ve-btn  ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Another Player</button>`)
 			.click(() => this._comp.doAddPlayer());
 
-		const $btnAddAdvancedCol = $(`<button class="ve-btn ve-btn-primary ve-btn-xxs ecgen-player__btn-inline h-ipt-xs bl-0 bb-0 bbl-0 bbr-0 btl-0 ml-n1" title="Add Column" tabindex="-1"><span class="glyphicon glyphicon-list-alt"></span></button>`)
+		const $btnAddAdvancedCol = $(`<button class="ve-btn  ve-btn-xxs ecgen-player__btn-inline h-ipt-xs bl-0 bb-0 bbl-0 bbr-0 btl-0 ml-n1" title="Add Column" tabindex="-1"><span class="glyphicon glyphicon-list-alt"></span></button>`)
 			.click(() => this._comp.doAddColExtraAdvanced());
 
 		const $wrpHeaders = $(`<div class="ve-flex"></div>`);

@@ -160,7 +160,7 @@ export class MoneyConverter {
 		const $wrpCtrl = $(`<div class="split dm-money__ctrl"></div>`).appendTo($wrpConverter);
 		const $wrpCtrlLhs = $(`<div class="dm-money__ctrl__lhs split-child" style="width: 66%;"></div>`).appendTo($wrpCtrl);
 		const $wrpBtnAddSettings = $(`<div class="split"></div>`).appendTo($wrpCtrlLhs);
-		const $btnAddRow = $(`<button class="ve-btn ve-btn-primary ve-btn-sm" title="Add Row"><span class="glyphicon glyphicon-plus"></span></button>`)
+		const $btnAddRow = $(`<button class="ve-btn  ve-btn-sm" title="Add Row"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.appendTo($wrpBtnAddSettings)
 			.click(() => {
 				addRow();

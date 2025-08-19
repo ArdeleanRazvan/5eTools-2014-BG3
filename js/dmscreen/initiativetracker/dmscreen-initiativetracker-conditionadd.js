@@ -1,6 +1,6 @@
-import {InitiativeTrackerUtil, UtilConditions} from "../../initiativetracker/initiativetracker-utils.js";
-import {InitiativeTrackerConditionCustomEdit} from "./dmscreen-initiativetracker-conditioncustom.js";
-import {InitiativeTrackerConditionUtil} from "./dmscreen-initiativetracker-condition.js";
+import { InitiativeTrackerUtil, UtilConditions } from "../../initiativetracker/initiativetracker-utils.js";
+import { InitiativeTrackerConditionCustomEdit } from "./dmscreen-initiativetracker-conditioncustom.js";
+import { InitiativeTrackerConditionUtil } from "./dmscreen-initiativetracker-condition.js";
 
 class _UtilConditionsCustomView {
 	static $getBtnCondition ({comp, cbSubmit, cbClick}) {
@@ -210,7 +210,7 @@ export class InitiativeTrackerConditionAdd extends BaseComponent {
 	}
 
 	_render_$getStgSubmit ({rdState}) {
-		const $btnAdd = $(`<button class="ve-btn ve-btn-primary w-100">Set Condition</button>`)
+		const $btnAdd = $(`<button class="ve-btn  w-100">Set Condition</button>`)
 			.click(() => this._doSubmit({rdState}));
 		return $$`
 			<div class="ve-flex-v-center">

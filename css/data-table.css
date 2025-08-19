@@ -437,6 +437,7 @@
       padding-left: 0.5rem;
       padding-bottom: 0.3rem;
       .ui-tab__btn-tab-head {
+        margin-top:0.75rem !important;
         color: #fbcea0;
       }
       #tabs-right {
@@ -445,7 +446,7 @@
         }
         padding-top: 2px;
       }
-    }
+    }4
     .wrp-stats-table {
       border: none;
       border-bottom: 1px solid #fbcea0;
@@ -463,6 +464,7 @@
         tr {
           td {
             padding-left: 1rem;
+            padding-right: 1rem;
           }
         }
         .rd__list-hang-notitle {
@@ -499,6 +501,7 @@
             display: none;
           }
           .stats__h-name {
+            padding-left:0.5rem;
             font-family: "Alegreya", serif;
             font-size: 2.4rem !important;
             font-weight: 700;
@@ -510,6 +513,7 @@
           .stats__wrp-h-source {
             font-family: "Alegreya", serif;
             font-weight: 700;
+            padding-right:0.5rem;
             font-size: 2.4rem;
           }
         }
@@ -657,4 +661,5 @@
   height: 1px;
   width: 100%;
   margin: 0.5rem 0;
+  
 }

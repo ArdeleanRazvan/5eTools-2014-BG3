@@ -1,8 +1,8 @@
-import {StatGenUiCompAsi} from "./statgen-ui-comp-asi.js";
-import {StatGenUiRenderLevelOneBackground} from "./statgen-ui-comp-levelone-background.js";
-import {StatGenUiRenderLevelOneRace} from "./statgen-ui-comp-levelone-race.js";
-import {StatGenUiRenderableCollectionPbRules} from "./statgen-ui-comp-pbrules.js";
-import {MAX_CUSTOM_FEATS, MODE_NONE} from "./statgen-ui-consts.js";
+import { StatGenUiCompAsi } from "./statgen-ui-comp-asi.js";
+import { StatGenUiRenderLevelOneBackground } from "./statgen-ui-comp-levelone-background.js";
+import { StatGenUiRenderLevelOneRace } from "./statgen-ui-comp-levelone-race.js";
+import { StatGenUiRenderableCollectionPbRules } from "./statgen-ui-comp-pbrules.js";
+import { MAX_CUSTOM_FEATS, MODE_NONE } from "./statgen-ui-consts.js";
 
 export class StatGenUi extends BaseComponent {
 	static _STANDARD_ARRAY = [15, 14, 13, 12, 10, 8];
@@ -315,7 +315,7 @@ export class StatGenUi extends BaseComponent {
 			.change(() => this._$rollIptFormula.removeClass("form-control--error"));
 
 		const lockRoll = new VeLock();
-		const $btnRoll = $(`<button class="ve-btn ve-btn-primary bold">Roll</button>`)
+		const $btnRoll = $(`<button class="ve-btn  bold">Roll</button>`)
 			.click(async () => {
 				try {
 					await lockRoll.pLock();

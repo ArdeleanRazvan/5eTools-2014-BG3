@@ -101,7 +101,7 @@ class MakeCards extends BaseComponent {
 		const menuSearch = ContextUtil.getMenu(this._render_getContextMenuOptions());
 
 		const iptSearch = ee`<input type="search" class="form-control mr-2" placeholder="Search cards...">`;
-		const btnAdd = ee`<button class="ve-btn ve-btn-primary mr-2"><span class="glyphicon glyphicon-plus"></span> Add</button>`
+		const btnAdd = ee`<button class="ve-btn  mr-2"><span class="glyphicon glyphicon-plus"></span> Add</button>`
 			.onn("click", evt => ContextUtil.pOpenMenu(evt, menuSearch));
 		const btnReset = ee`<button class="ve-btn ve-btn-danger mr-2"><span class="glyphicon glyphicon-trash"></span> Reset</button>`
 			.onn("click", async () => {

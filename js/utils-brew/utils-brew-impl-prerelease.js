@@ -1,4 +1,4 @@
-import {BrewUtil2Base} from "./utils-brew-base.js";
+import { BrewUtil2Base } from "./utils-brew-base.js";
 
 export class PrereleaseUtil_ extends BrewUtil2Base {
 	_STORAGE_KEY_LEGACY = null;
@@ -22,7 +22,7 @@ export class PrereleaseUtil_ extends BrewUtil2Base {
 	DISPLAY_NAME = "prerelease content";
 	DISPLAY_NAME_PLURAL = "prereleases";
 	DEFAULT_AUTHOR = "Wizards of the Coast";
-	STYLE_BTN = "ve-btn-primary";
+	STYLE_BTN = "";
 	IS_PREFER_DATE_ADDED = false;
 	IS_ADD_BTN_ALL_PARTNERED = false;
 

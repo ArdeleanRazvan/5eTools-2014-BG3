@@ -1,6 +1,6 @@
-import {PANEL_TYP_INITIATIVE_TRACKER} from "./dmscreen-consts.js";
-import {DmScreenUtil} from "./dmscreen-util.js";
-import {EncounterBuilderHelpers, ListUtilBestiary} from "../utils-list-bestiary.js";
+import { PANEL_TYP_INITIATIVE_TRACKER } from "./dmscreen-consts.js";
+import { DmScreenUtil } from "./dmscreen-util.js";
+import { EncounterBuilderHelpers, ListUtilBestiary } from "../utils-list-bestiary.js";
 
 export class TimerTrackerMoonSpriteLoader {
 	static _TIME_TRACKER_MOON_SPRITE = new Image();
@@ -1475,7 +1475,7 @@ TimeTrackerRoot_Clock_Weather._DEFAULT_STATE = {
 	windSpeed: TimeTrackerRoot_Clock_Weather._WIND_SPEEDS[0],
 };
 TimeTrackerRoot_Clock_Weather._TEMPERATURE_META = [
-	{icon: "fa-temperature-snow", class: "ve-btn-primary"},
+	{icon: "fa-temperature-snow", class: ""},
 	{icon: "fa-temperature-quarter", class: "ve-btn-info"},
 	{icon: "fa-temperature-half"},
 	{icon: "fa-temperature-three-quarters", class: "ve-btn-warning"},
@@ -2128,7 +2128,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 				doClose();
 			});
 
-		const $btnAddEvent = $(`<button class="ve-btn ve-btn-xs ve-btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Event</button>`)
+		const $btnAddEvent = $(`<button class="ve-btn ve-btn-xs "><span class="glyphicon glyphicon-plus"></span> Add Event</button>`)
 			.click(() => {
 				const nxtPos = Object.keys(this._parent.get("events")).length;
 				const nuEvent = TimeTrackerBase.getGenericEvent(nxtPos, year, eventDay);
@@ -2136,7 +2136,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 				this._parent.set("events", {...this._parent.get("events"), [nuEvent.id]: nuEvent});
 			});
 
-		const $btnAddEventAtTime = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="SHIFT to Add at Current Time">At Time...</button>`)
+		const $btnAddEventAtTime = $(`<button class="ve-btn ve-btn-xs " title="SHIFT to Add at Current Time">At Time...</button>`)
 			.click(async evt => {
 				const chosenTimeInfo = await this._render_pGetEventTimeOfDay(eventYear, eventDay, evt.shiftKey);
 				if (chosenTimeInfo == null) return;
@@ -3021,7 +3021,7 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 	}
 
 	_render_$getBtnAddChild ({prop, name, fnGetGeneric}) {
-		return $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Add ${name}"><span class="glyphicon glyphicon-plus"></span></button>`)
+		return $(`<button class="ve-btn ve-btn-xs " title="Add ${name}"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.click(() => {
 				const nxt = fnGetGeneric(this._parent.get(prop).length);
 				this._parent.set(prop, [...this._parent.get(prop), nxt]);

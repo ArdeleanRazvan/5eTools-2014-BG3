@@ -1,6 +1,6 @@
-import {RenderBestiary} from "./render-bestiary.js";
-import {RenderSpells} from "./render-spells.js";
-import {RenderItems} from "./render-items.js";
+import { RenderBestiary } from "./render-bestiary.js";
+import { RenderSpells } from "./render-spells.js";
+import { RenderItems } from "./render-items.js";
 
 const onLoadSeo = async () => {
 	const fullPage = `${globalThis._SEO_PAGE}.html`;
@@ -10,7 +10,7 @@ const onLoadSeo = async () => {
 	es(`.page__title`).txt(`${globalThis._SEO_PAGE.toTitleCase()}: ${it.name}`);
 
 	ee`<div class="ve-col-12 ve-flex-vh-center my-2 pt-3 no-print">
-		<button class="ve-btn ve-btn-primary">
+		<button class="ve-btn ">
 			<a href="/${globalThis._SEO_PAGE}.html" style="font-size: 1.7em; color: white;">${globalThis._SEO_STYLE === 1 ? `View All` : `View Complete`} ${globalThis._SEO_PAGE.toTitleCase()}</a>
 		</button>
 	</div>`.appendTo(es(`#link-page`));

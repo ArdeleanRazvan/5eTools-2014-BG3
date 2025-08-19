@@ -873,7 +873,7 @@ SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollection
 		comp._addHookBase("manager_loader_isExpanded", hkIsExpanded);
 		hkIsExpanded();
 
-		const $btnLoad = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-primary" title="Load"><span class="glyphicon glyphicon-ok"></span></button>`)
+		const $btnLoad = $(`<button class="ve-btn ve-btn-5et ve-btn-xs " title="Load"><span class="glyphicon glyphicon-ok"></span></button>`)
 			.click(evt => {
 				evt.stopPropagation();
 				this._comp._state.activeId = save.id;

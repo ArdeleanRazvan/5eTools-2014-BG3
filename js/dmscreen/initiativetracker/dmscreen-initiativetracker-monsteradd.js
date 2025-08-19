@@ -1,4 +1,4 @@
-import {OmnisearchBacking} from "../../omnisearch/omnisearch-backing.js";
+import { OmnisearchBacking } from "../../omnisearch/omnisearch-backing.js";
 
 class _MonstersToLoad {
 	constructor (
@@ -134,7 +134,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 	}
 
 	_render_$getFooter ({rdState}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn  ve-btn-sm w-100">Save</button>`)
 			.click(() => {
 				rdState.cbDoClose(
 					true,

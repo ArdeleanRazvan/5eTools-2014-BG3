@@ -171,7 +171,7 @@ class DecksPage extends ListPage {
 		const $wrpControls = $(`<div class="ve-flex mt-auto" data-name="deck-wrp-controls"></div>`)
 			.prependTo(this._$wrpTabs);
 
-		const $btnDraw = $(`<button class="ve-btn ve-btn-xs ve-btn-primary bb-0 bbr-0 bbl-0" title="Draw a Card (SHIFT to Skip Replacement; CTRL to Skip Animation)"><i class="fas fa-fw fa-cards"></i></button>`)
+		const $btnDraw = $(`<button class="ve-btn ve-btn-xs  bb-0 bbr-0 bbl-0" title="Draw a Card (SHIFT to Skip Replacement; CTRL to Skip Animation)"><i class="fas fa-fw fa-cards"></i></button>`)
 			.click(async evt => {
 				const cards = this._compCardState.getUndrawnCards(ent);
 				if (!cards.length) return JqueryUtil.doToast({content: "All cards have already been drawn!", type: "warning"});

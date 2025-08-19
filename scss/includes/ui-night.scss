@@ -97,7 +97,8 @@ Shared UI components
 			&--active:focus,
 			&--active:hover,
 			&--active:active {
-				background-color: vars-night.$rgb-btn-default-active--night;
+				background-color: transparent;
+				font-weight:800;
 			}
 
 			&--stacked {

@@ -1,4 +1,4 @@
-import {InitiativeTrackerConditionUtil} from "./dmscreen-initiativetracker-condition.js";
+import { InitiativeTrackerConditionUtil } from "./dmscreen-initiativetracker-condition.js";
 
 class _RenderableCollectionConditionsCustomEdit extends RenderableCollectionGenericRows {
 	constructor (
@@ -96,7 +96,7 @@ export class InitiativeTrackerConditionCustomEdit extends BaseComponent {
 	}
 
 	_render_$getFooter ({rdState}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn  ve-btn-sm w-100">Save</button>`)
 			.click(() => rdState.cbDoClose(true));
 
 		return $$`<div class="w-100 py-3 no-shrink">

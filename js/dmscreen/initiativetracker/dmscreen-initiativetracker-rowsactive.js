@@ -1,17 +1,17 @@
 import {
-	IS_PLAYER_VISIBLE_ALL,
-	IS_PLAYER_VISIBLE_NONE,
+    IS_PLAYER_VISIBLE_ALL,
+    IS_PLAYER_VISIBLE_NONE,
 } from "./dmscreen-initiativetracker-statcolumns.js";
-import {InitiativeTrackerConditionAdd} from "./dmscreen-initiativetracker-conditionadd.js";
-import {InitiativeTrackerUi} from "./dmscreen-initiativetracker-ui.js";
-import {InitiativeTrackerConst} from "./dmscreen-initiativetracker-consts.js";
-import {InitiativeTrackerSort} from "./dmscreen-initiativetracker-sort.js";
-import {RenderableCollectionConditions} from "../../initiativetracker/initiativetracker-utils.js";
+import { InitiativeTrackerConditionAdd } from "./dmscreen-initiativetracker-conditionadd.js";
+import { InitiativeTrackerUi } from "./dmscreen-initiativetracker-ui.js";
+import { InitiativeTrackerConst } from "./dmscreen-initiativetracker-consts.js";
+import { InitiativeTrackerSort } from "./dmscreen-initiativetracker-sort.js";
+import { RenderableCollectionConditions } from "../../initiativetracker/initiativetracker-utils.js";
 import {
-	InitiativeTrackerRowDataViewBase,
-	RenderableCollectionRowDataBase,
+    InitiativeTrackerRowDataViewBase,
+    RenderableCollectionRowDataBase,
 } from "./dmscreen-initiativetracker-rowsbase.js";
-import {InitiativeTrackerRowStateBuilderActive} from "./dmscreen-initiativetracker-rowstatebuilder.js";
+import { InitiativeTrackerRowStateBuilderActive } from "./dmscreen-initiativetracker-rowstatebuilder.js";
 
 class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase {
 	constructor (
@@ -196,7 +196,7 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 	_pPopulateRow_btns ({comp, entity, $wrpRhs}) {
 		const $btnVisible = InitiativeTrackerUi.$getBtnPlayerVisible(
 			comp._state.isPlayerVisible,
-			() => comp._state.isPlayerVisible = $btnVisible.hasClass("ve-btn-primary")
+			() => comp._state.isPlayerVisible = $btnVisible.hasClass("")
 				? IS_PLAYER_VISIBLE_ALL
 				: IS_PLAYER_VISIBLE_NONE,
 			false,

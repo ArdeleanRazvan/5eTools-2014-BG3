@@ -248,6 +248,7 @@
     .features-toggles,
     .middle-toggles {
       flex-grow: 1;
+      height:2.6rem !important;
       display: flex;
         align-items: center;
       justify-content: center;
