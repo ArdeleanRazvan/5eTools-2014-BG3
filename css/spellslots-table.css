@@ -1,7 +1,6 @@
 @media screen and (max-width: 991px) {
   #statsprof {
-    border-top: 1px solid #fbcea0 !important;
-    border-bottom: 1px solid #fbcea0 !important;
+    border:none !important;
   }
   .container {
     margin: 0;
@@ -19,6 +18,12 @@
       > .col-md-3,
       .col-md-9 {
         padding: 0;
+        margin:0;
+      }
+      .col-md-9{
+        border-left:none;
+        border-right:none;
+        border-radius: 0 !important;
       }
     }
   }
@@ -60,11 +65,12 @@
     }
   }
   #subclasstabs {
-    padding-left: 0.5rem !important;
-    padding-right: 1rem !important;
+      border-bottom:1px solid #fbcea0 !important;
     .features-navbar {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      row-gap:0 !important;
+      margin:0 !important;
+      padding:1rem 0.5rem 0rem 0.5rem !important;
+      align-items: center;
       button {
         font-size: 1.4rem !important;
         padding-top: 0 !important;
@@ -73,14 +79,30 @@
       }
     }
 
-    div:nth-child(2) {
+    .middle-toggles,
+    .features-toggles{
+      >button{height:2.4rem !important;
+      border-radius:4px;}
+    }
+
+    .middle-toggles {
       margin: 0;
+      padding:0 !important;
       width: 100%;
+      
       button {
-        margin: 0;
         font-size: 1.2rem !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
+      }
+    }
+
+    >div:nth-child(2){
+      padding: 0.25rem 0.5rem 1rem 0.5rem !important;
+
+      >button{
+        height:2.4rem;
+        font-size:1.4rem !important;
       }
     }
   }
@@ -91,29 +113,26 @@
   .col-md-3 {
     padding-left: 0 !important;
     padding-right: 0 !important;
+   
+    height:fit-content;
   }
   .col-md-9 {
     padding: 1rem;
     margin-left: 1rem;
-    margin-right: 1rem;
-
+    margin-right: 0;
+    border:1px solid #fbcea0;
     border-radius: 8px !important;
     background: #00000059;
   }
-  .wrp-btn-readmode {
-    button {
-      color: #fbcea0;
-    }
-  }
   #statsprof {
+    border:1px solid #fbcea0;
+    border-radius: 8px !important;
     table {
       background-color: #00000059;
-
       tbody {
         tr {
           .ve-tbl-border {
-            background: #fbcea0;
-            height: 1px !important;
+           display:none;
           }
           td {
             .cls-side__section-head {
@@ -126,9 +145,14 @@
               -webkit-text-fill-color: transparent;
             }
           }
-          td {
+          th{
+            padding-top:0.5rem;            
+          }
+
+          td,th {
             padding-left: 0.8rem;
           }
+
           td,
           th {
             h1,
@@ -167,6 +191,7 @@
   }
   .class-title {
     display: flex;
+    background-color: #00000059;
     .cls-tbl__disp-name {
       margin: 0;
       font-family: "Alegreya", serif;
@@ -248,7 +273,6 @@
     .features-toggles,
     .middle-toggles {
       flex-grow: 1;
-      height:2.6rem !important;
       display: flex;
         align-items: center;
       justify-content: center;
@@ -267,6 +291,7 @@
       }
 
       > button {
+        height:3.1rem;
         flex-grow: 1;
         font-family: "Alegreya", serif;
         font-weight: 600;
@@ -281,10 +306,6 @@
     }
 
     .middle-toggles {
-      height: 3.1rem;
-      >button{
-        height:100%;
-      }
       > button:nth-child(-n + 3):hover {
         background-color: #fbcea0;
         color: black;
@@ -292,7 +313,11 @@
     }
 
     >div:nth-child(2) {
+      margin-top:0.5rem;
+      padding:0.5rem 0;
+      gap:0.5rem;
       >button {
+        border-radius: 6px;
         flex-grow: 1;
         font-weight: 500;
         justify-content: center;

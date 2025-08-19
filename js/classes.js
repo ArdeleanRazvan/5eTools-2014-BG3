@@ -1519,7 +1519,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 		const $btnToggleFluff = ComponentUiUtil.$getBtnBool(this, "isShowFluff", {text: "Info"}).title("Toggle Class Info");
 
-		$$`<div class="ve-flex-v-center m-1 ve-btn-group mr-3 no-shrink features-navbar"><div class="features-toggles">
+		$$`<div class="ve-flex-v-center ve-btn-group no-shrink features-navbar"><div class="features-toggles">
 		${$btnToggleFeatures}${$btnToggleFeatureVariants}${$btnToggleFluff}
 		</div></div>`.appendTo($wrp);
 		// endregion
@@ -1731,7 +1731,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		MiscUtil.pDefer(hkSourcesVisible);
 
 		// Initially have these "hidden," to prevent them popping out when we filter them
-		const $btn = $$`<button class="ve-btn ve-btn-default ve-btn-xs ve-flex-v-center m-1 ve-hidden ${sc.isReprinted ? "cls__btn-sc--reprinted" : ""}">
+		const $btn = $$`<button class="ve-btn ve-btn-default ve-btn-xs ve-flex-v-center ve-hidden ${sc.isReprinted ? "cls__btn-sc--reprinted" : ""}">
 				${$dispName}
 				${$dispSource}
 			</button>`
