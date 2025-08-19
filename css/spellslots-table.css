@@ -69,7 +69,7 @@
         font-size: 1.4rem !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        height:2.5rem        
+        height:2.5rem;       
       }
     }
 
@@ -281,6 +281,9 @@
 
     .middle-toggles {
       height: 3.1rem;
+      >button{
+        height:100%;
+      }
       > button:nth-child(-n + 3):hover {
         background-color: #fbcea0;
         color: black;
@@ -313,62 +316,6 @@
         color: white;
       }
     }
-
-    /* div:nth-child(1) {
-      .features-toggles{
-
-      }
-      width:100%;
-      button {
-        border: 1px solid #fbcea0;
-        color: #fbcea0;
-        font-weight: 700;
-        box-shadow: none;
-        font-size: 1.8rem;
-      }
-      button.active,
-      button.cls__btn-cf--active {
-        background-color: #fbcea0;
-        color: black;
-        border-color: #00000059;
-      }
-      button:hover {
-        border: 1px solid #fbcea0;
-        background: #fbcea0;
-        color: black;
-      }
-    } */
-    /* div:nth-child(2) {
-      button {
-        flex-grow: 1;
-        font-weight: 500;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid transparent;
-        column-gap:0.5rem;
-
-        div{
-          flex:0 0 0 !important;
-          display:flex;
-          width: fit-content;
-        }
-      }
-      button.cls__btn-sc--active-fresh {
-        background: linear-gradient(135deg, #fff, #fbcea0 66%, #fbcfa0);
-        color: black;
-      }
-      button:not(.cls__btn-sc--active-fresh) {
-        background: linear-gradient(90deg, #404040, #3a403a) 50%;
-        color: white;
-      }
-      div {
-        i {
-          font-family: "Alegreya", serif;
-          font-size: 1.4rem;
-          font-weight: 500;
-        }
-      }
-    } */
   }
 }
 @layer vetools {
