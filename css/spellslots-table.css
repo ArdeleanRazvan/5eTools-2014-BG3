@@ -1,6 +1,6 @@
 @media screen and (max-width: 991px) {
   #statsprof {
-    border:none !important;
+    border: none !important;
   }
   .container {
     margin: 0;
@@ -18,11 +18,11 @@
       > .col-md-3,
       .col-md-9 {
         padding: 0;
-        margin:0;
+        margin: 0;
       }
-      .col-md-9{
-        border-left:none;
-        border-right:none;
+      .col-md-9 {
+        border-left: none;
+        border-right: none;
         border-radius: 0 !important;
       }
     }
@@ -65,31 +65,33 @@
     }
   }
   #subclasstabs {
-      border-bottom:1px solid #fbcea0 !important;
+    border-bottom: 1px solid #fbcea0 !important;
     .features-navbar {
-      row-gap:0 !important;
-      margin:0 !important;
-      padding:1rem 0.5rem 0rem 0.5rem !important;
+      row-gap: 0 !important;
+      margin: 0 !important;
+      padding: 1rem 0.5rem 0rem 0.5rem !important;
       align-items: center;
       button {
         font-size: 1.4rem !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        height:2.5rem;       
+        height: 2.5rem;
       }
     }
 
     .middle-toggles,
-    .features-toggles{
-      >button{height:2.4rem !important;
-      border-radius:4px;}
+    .features-toggles {
+      > button {
+        height: 2.4rem !important;
+        border-radius: 4px;
+      }
     }
 
     .middle-toggles {
       margin: 0;
-      padding:0 !important;
+      padding: 0 !important;
       width: 100%;
-      
+
       button {
         font-size: 1.2rem !important;
         padding-top: 0 !important;
@@ -97,12 +99,22 @@
       }
     }
 
-    >div:nth-child(2){
+    > div:nth-child(2) {
       padding: 0.25rem 0.5rem 1rem 0.5rem !important;
 
-      >button{
-        height:2.4rem;
-        font-size:1.4rem !important;
+      > button {
+        height: 2.4rem;
+        font-size: 1.4rem !important;
+      }
+    }
+  }
+
+  .cls__stats {
+    .cls-main__cls-fluff {
+      > td {
+        padding-top: 1rem !important;
+        padding-left: 0.8rem !important;
+        padding-right: 0.8rem !important;
       }
     }
   }
@@ -110,29 +122,32 @@
 .container {
   padding-left: 0;
   padding-right: 0;
+   .roller.render-roller{
+color:#fbcea0;
+    }
   .col-md-3 {
     padding-left: 0 !important;
     padding-right: 0 !important;
-   
-    height:fit-content;
+
+    height: fit-content;
   }
   .col-md-9 {
     padding: 1rem;
     margin-left: 1rem;
     margin-right: 0;
-    border:1px solid #fbcea0;
+    border: 1px solid #fbcea0;
     border-radius: 8px !important;
     background: #00000059;
   }
   #statsprof {
-    border:1px solid #fbcea0;
+    border: 1px solid #fbcea0;
     border-radius: 8px !important;
     table {
       background-color: #00000059;
       tbody {
         tr {
           .ve-tbl-border {
-           display:none;
+            display: none;
           }
           td {
             .cls-side__section-head {
@@ -145,11 +160,12 @@
               -webkit-text-fill-color: transparent;
             }
           }
-          th{
-            padding-top:0.5rem;            
+          th {
+            padding-top: 0.5rem;
           }
 
-          td,th {
+          td,
+          th {
             padding-left: 0.8rem;
           }
 
@@ -191,7 +207,6 @@
   }
   .class-title {
     display: flex;
-    background-color: #00000059;
     .cls-tbl__disp-name {
       margin: 0;
       font-family: "Alegreya", serif;
@@ -219,8 +234,10 @@
     width: 74%;
     float: left;
     font-family: "Alegreya", serif;
+    background: #00000059;
+   
     .cls-tbl {
-      background: #00000059;
+      background: transparent;
       tbody {
         tr:nth-child(1) {
           th {
@@ -267,14 +284,13 @@
     > .features-navbar {
       width: 100%;
       column-gap: 1rem;
-    
     }
 
     .features-toggles,
     .middle-toggles {
       flex-grow: 1;
       display: flex;
-        align-items: center;
+      align-items: center;
       justify-content: center;
       > button:first-child {
         border-top-right-radius: 0;
@@ -291,7 +307,7 @@
       }
 
       > button {
-        height:3.1rem;
+        height: 3.1rem;
         flex-grow: 1;
         font-family: "Alegreya", serif;
         font-weight: 600;
@@ -312,11 +328,11 @@
       }
     }
 
-    >div:nth-child(2) {
-      margin-top:0.5rem;
-      padding:0.5rem 0 1rem 0;
-      gap:0.5rem;
-      >button {
+    > div:nth-child(2) {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0 1rem 0;
+      gap: 0.5rem;
+      > button {
         border-radius: 6px;
         flex-grow: 1;
         font-weight: 500;
@@ -332,14 +348,76 @@
         }
       }
 
-      >button.cls__btn-sc--active-fresh {
+      > button.cls__btn-sc--active-fresh {
         background: linear-gradient(135deg, #fff, #fbcea0 66%, #fbcfa0);
         color: black;
       }
 
-      >button:not(.cls__btn-sc--active-fresh) {
+      > button:not(.cls__btn-sc--active-fresh) {
         background: linear-gradient(90deg, #404040, #3a403a) 50%;
         color: white;
+      }
+    }
+  }
+
+  .cls__stats {
+    background-color: transparent;
+    * {
+      font-family: "Alegreya", serif;
+    }
+
+    .entry-title-inner {
+      font-variant: none;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #fbcea0 66%, #fbcfa0);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ve-tbl-border {
+      background: #fbcea0;
+    }
+
+    p,
+    p > i {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    p>i>a{
+      color:#fbcea0;
+    }
+    p>a,p>.roller.render-roller{
+      color:#fbcea0;
+    }
+
+    hr {
+      border-color: #fbcea0;
+    }
+
+    .cls-main__cls-fluff {
+      > td {
+        padding-top: 1rem !important;
+      }
+
+      .rd__table {
+        > caption {
+          margin-left: 0;
+          font-size: 1.6rem;
+        }
+
+        > thead > tr > th {
+          font-size: 1.5rem;
+          > .roller.render-roller {
+            color: #fbcea0;
+          }
+        }
+
+        tbody > tr > td {
+            font-size: 1.4rem;
+            font-weight: 500;
+          }
       }
     }
   }
