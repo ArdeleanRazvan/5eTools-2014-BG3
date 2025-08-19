@@ -1192,9 +1192,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		<div class="class-title"><h2 class="ve-text-left cls-tbl__disp-name">The ${cls.name} Table</h2><span class="scroll-right"><img src="./img/svgs/mouse.png" height="16"/>Scroll Right</span></div>
 		<table class="cls-tbl shadow-big w-100 mb-2">
 			<tbody>
-			<tr><th class="ve-tbl-border" colspan="999"></th></tr>
-			<tr><th class="ve-text-left cls-tbl__disp-name" colspan="999">${cls.name}</th></tr>
-			<tr>
+		<tr>
 				<th colspan="3"></th> <!-- spacer to match the 3 default cols (level, prof, features) -->
 				${$tblGroupHeaders}
 			</tr>
