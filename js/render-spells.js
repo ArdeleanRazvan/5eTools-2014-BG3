@@ -1,7 +1,7 @@
 import { SITE_STYLE__CLASSIC } from "./consts.js";
 import { VetoolsConfig } from "./utils-config/utils-config-config.js";
 import { RenderPageImplBase } from "./render-page-base.js";
-
+import "./string-extensions.js";
 export class RenderSpellsSettings {
 	static SETTINGS = {
 		isDisplayGroups: new SettingsUtil.Setting({
@@ -147,32 +147,7 @@ class _RenderSpellsImplBase extends RenderPageImplBase {
 			renderer.recursiveRender(higherLevelsEntryList, stack, { depth: 2 });
 		}
 
-		let lastDamageType = null;
-
-		const processedStack = stack
-			.map((htmlString) => {
-				// First, replace the main damage roller spans and capture the damage type
-				htmlString = htmlString.replace(/(<span class="roller render-roller"[^>]*)(>)([^<]*)<\/span>\s*([a-zA-Z]+)\s+(damage)/g, (match, spanStart, spanEnd, rollerText, dmgType, dmgWord) => {
-					lastDamageType = dmgType; // Save the last seen damage type
-					const newSpanStart = spanStart.replace(/class="([^"]*)"/, (m, cls) => {
-						return `class="${cls} ${dmgType.toLowerCase()}-damage"`;
-					});
-					return `${newSpanStart}${spanEnd}${rollerText}<img class="damage-icon" src="./img/damagetypes/${dmgType}_damage_icon.webp"/>${dmgType} ${dmgWord}</span>`;
-				});
-
-				// Then, replace any "bare" roller spans (like 1d6) that follow, using the last seen damage type
-				htmlString = htmlString.replace(/(<span class="roller render-roller"[^>]*>)([^<]*)<\/span>(?!\s*[a-zA-Z]+\s+damage)/g, (match, spanStart, rollerText) => {
-					if (!lastDamageType) return match; // Only decorate if we have a damage type
-					const newSpanStart = spanStart.replace(/class="([^"]*)"/, (m, cls) => {
-						return `class="${cls} ${lastDamageType.toLowerCase()}-damage"`;
-					});
-					return `${newSpanStart}${rollerText}</span>`;
-				});
-
-				return htmlString;
-			})
-			.join("");
-		return processedStack;
+		return stack.join("").applyDamageIcons().applyHpIcons();
 	}
 
 	_getCommonHtmlParts_from({ ent, opts, renderer }) {
@@ -308,11 +283,12 @@ export class RenderSpells {
 	 * @param [opts.settings]
 	 */
 	static getRenderedSpell(ent, opts) {
+		
 		const styleHint = VetoolsConfig.get("styleSwitcher", "style");
 		switch (styleHint) {
 			case SITE_STYLE__CLASSIC: {
 				const renderedSpell = this._RENDER_CLASSIC.getRendered(ent, opts);
-				console.log(renderedSpell);
+				
 				return renderedSpell;
 			}
 			default:

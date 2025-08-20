@@ -461,6 +461,9 @@
         font-family: "Alegreya", serif;
         font-weight: 500;
         font-size: 1.6rem;
+        .skill-icons{
+          vertical-align: top;
+        }
         tr {
           td {
             padding-left: 1rem;

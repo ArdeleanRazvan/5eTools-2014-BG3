@@ -67,6 +67,7 @@
   #subclasstabs {
     border-bottom: 1px solid #fbcea0 !important;
     .features-navbar {
+      column-gap:0.5rem !important;
       row-gap: 0 !important;
       margin: 0 !important;
       padding: 1rem 0.5rem 0rem 0.5rem !important;
@@ -284,47 +285,46 @@
     > .features-navbar {
       width: 100%;
       column-gap: 1rem;
-    }
+      .features-toggles,
+      .middle-toggles {
+        flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        > button:first-child {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
 
-    .features-toggles,
-    .middle-toggles {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      > button:first-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        > button:not(:first-child):not(:last-child) {
+          border-radius: 0;
+        }
+
+        > button:last-child {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        > button {
+          height: 3.1rem;
+          flex-grow: 1;
+          font-family: "Alegreya", serif;
+          font-weight: 600;
+          border: 1px solid #fbcea0 !important;
+          color: #fbcea0;
+        }
+        > button.active,
+        > button.cls__btn-cf--active {
+          background-color: #fbcea0;
+          color: black;
+        }
       }
 
-      > button:not(:first-child):not(:last-child) {
-        border-radius: 0;
-      }
-
-      > button:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-
-      > button {
-        height: 3.1rem;
-        flex-grow: 1;
-        font-family: "Alegreya", serif;
-        font-weight: 600;
-        border: 1px solid #fbcea0 !important;
-        color: #fbcea0;
-      }
-      > button.active,
-      > button.cls__btn-cf--active {
-        background-color: #fbcea0;
-        color: black;
-      }
-    }
-
-    .middle-toggles {
-      > button:nth-child(-n + 3):hover {
-        background-color: #fbcea0;
-        color: black;
+      .middle-toggles {
+        > button:nth-child(-n + 3):hover {
+          background-color: #fbcea0;
+          color: black;
+        }
       }
     }
 
@@ -408,6 +408,11 @@
         ul {
           font-weight: 500;
           font-size: 1.6rem;
+          li {
+            a {
+              color: #fbcea0;
+            }
+          }
         }
       }
       .rd__table {
@@ -426,11 +431,16 @@
         tbody > tr > td {
           font-size: 1.4rem;
           font-weight: 500;
+          a {
+            color: #fbcea0;
+          }
         }
       }
     }
 
-    .cls-main__linked-titles,.cls-main__sc-feature,.cls-main__sc-fluff {
+    .cls-main__linked-titles,
+    .cls-main__sc-feature,
+    .cls-main__sc-fluff {
       td {
         padding-left: 0.8rem !important;
         padding-right: 0.8rem !important;
