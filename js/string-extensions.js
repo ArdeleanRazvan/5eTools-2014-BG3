@@ -37,6 +37,9 @@ String.prototype.applyDamageIcons = function () {
 	let result = this;
 	let lastDamageType = null;
 	
+	// D&D 5e damage types
+	const damageTypes = "bludgeoning|piercing|slashing|thunder|cold|fire|psychic|acid|poison|lightning|necrotic|radiant|force";
+	
 	// First pass: Handle explicit damage type spans and capture the damage type
 	result = result.replace(
 		/(<span[^>]*class="[^"]*roller render-roller[^"]*"[^>]*>)([^<]+)(<\/span>)\s*([a-zA-Z]+)\s+(damage)/g,
@@ -46,6 +49,35 @@ String.prototype.applyDamageIcons = function () {
 			// Add the damage type class to the existing class attribute
 			const newOpenTag = openTag.replace(/class="([^"]*)"/, `class="$1 ${lastDamageType}-damage"`);
 			return `${newOpenTag}${diceText}${icon}${damageType} ${damageWord}${closeTag}`;
+		}
+	);
+	
+	// Second pass: Handle dice rolls with multiple damage types (like "1d6 bludgeoning, piercing, or slashing damage")
+	const multiDamageRegex = new RegExp(
+		`(<span[^>]*class="[^"]*roller render-roller[^"]*"[^>]*>)([^<]+)(<\\/span>)\\s+(${damageTypes}),\\s+(${damageTypes}),?\\s+or\\s+(${damageTypes})\\s+(damage)`,
+		'gi'
+	);
+	result = result.replace(
+		multiDamageRegex,
+		function (match, openTag, diceText, closeTag, firstType, secondType, thirdType, damageWord) {
+			const firstTypeLower = firstType.toLowerCase();
+			const secondTypeLower = secondType.toLowerCase();
+			const thirdTypeLower = thirdType.toLowerCase();
+			
+			// Handle the first damage type with the dice roll
+			const firstIcon = `<img class="damage-icon" src="./img/damagetypes/${firstTypeLower}_damage_icon.webp"/>`;
+			const newOpenTag = openTag.replace(/class="([^"]*)"/, `class="$1 ${firstTypeLower}-damage"`);
+			let result = `${newOpenTag}${diceText}${firstIcon}${firstType}${closeTag}`;
+			
+			// Handle the second damage type
+			const secondIcon = `<img class="damage-icon" src="./img/damagetypes/${secondTypeLower}_damage_icon.webp"/>`;
+			result += `, <span class="damage-type ${secondTypeLower}-damage">${secondIcon}${secondType}</span>`;
+			
+			// Handle the third damage type with "damage" word
+			const thirdIcon = `<img class="damage-icon" src="./img/damagetypes/${thirdTypeLower}_damage_icon.webp"/>`;
+			result += `, or <span class="damage-type ${thirdTypeLower}-damage">${thirdIcon}${thirdType} ${damageWord}</span>`;
+			
+			return result;
 		}
 	);
 	
@@ -85,6 +117,49 @@ String.prototype.applyDamageIcons = function () {
 			}
 		);
 	}
+	
+	// Fifth pass: Handle standalone damage type text (like "cold damage") outside of HTML attributes
+	const standaloneDamageRegex = new RegExp(
+		`(?<!<[^>]*)\\b(${damageTypes})\\s+(damage)\\b(?![^<]*<\\/span>)(?![^<]*">)`,
+		"gi"
+	);
+	result = result.replace(
+		standaloneDamageRegex,
+		function (match, damageType, damageWord) {
+			const lowerType = damageType.toLowerCase();
+			const icon = `<img class="damage-icon" src="./img/damagetypes/${lowerType}_damage_icon.webp"/>`;
+			return `<span class="damage-type ${lowerType}-damage">${icon}${damageType} ${damageWord}</span>`;
+		}
+	);
+	
+	// Sixth pass: Handle damage type lists (like "acid, cold, fire, lightning, or thunder")
+	const damageListRegex = new RegExp(
+		`\\b((?:(?:${damageTypes})(?:,\\s*|\\s+or\\s+))+(?:${damageTypes}))\\b(?![^<]*<\\/span>)(?![^<]*">)`,
+		"gi"
+	);
+	result = result.replace(
+		damageListRegex,
+		function (match, damageList) {
+			// Split the damage types and process each one
+			const types = damageList.split(/,\s*|\s+or\s+/);
+			let result = "";
+			
+			for (let i = 0; i < types.length; i++) {
+				const type = types[i].trim();
+				const lowerType = type.toLowerCase();
+				const icon = `<img class="damage-icon" src="./img/damagetypes/${lowerType}_damage_icon.webp"/>`;
+				
+				// Add appropriate separator
+				if (i > 0) {
+					result += i === types.length - 1 ? ", or " : ", ";
+				}
+				
+				result += `<span class="damage-type ${lowerType}-damage">${icon}${type}</span>`;
+			}
+			
+			return result;
+		}
+	);
 	
 	return result;
 };

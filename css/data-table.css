@@ -468,6 +468,12 @@
           td {
             padding-left: 1rem;
             padding-right: 1rem;
+            p,ul{
+              text-wrap: pretty;
+                a,span:not([class*="-damage"]){
+                color:#fbcea0;
+                }
+            }
           }
         }
         .rd__list-hang-notitle {

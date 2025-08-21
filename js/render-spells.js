@@ -147,6 +147,8 @@ class _RenderSpellsImplBase extends RenderPageImplBase {
 			renderer.recursiveRender(higherLevelsEntryList, stack, { depth: 2 });
 		}
 
+		console.log(stack.join(""));
+
 		return stack.join("").applyDamageIcons().applyHpIcons();
 	}
 

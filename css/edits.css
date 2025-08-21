@@ -461,9 +461,9 @@ color:#fbcea0;
 .temphp-icon,
 .damage-icon {
   background-size: contain;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
 }
 
 .home__stripe {
